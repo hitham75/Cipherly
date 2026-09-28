@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cipher Studio — Caesar & Vigenère</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="orb o1"></div><div class="orb o2"></div>
+<main class="card">
+  <h1>Cipher Studio</h1>
+  <p class="sub">Enter text or a number, pick a cipher, then encrypt or decrypt.</p>
+
+  <label for="inp">Input (text or number)</label>
+  <textarea id="inp" placeholder="e.g. Hello World or 12345"></textarea>
+
+  <label>Mode</label>
+  <div class="seg" id="seg" data-m="enc">
+    <span class="pill"></span>
+    <button type="button" data-m="enc">🔒 Encrypt</button>
+    <button type="button" data-m="dec">🔓 Decrypt</button>
+  </div>
+
+  <div class="row">
+    <div>
+      <label for="alg">Cipher</label>
+      <select id="alg">
+        <option value="caesar">Caesar cipher</option>
+        <option value="vigenere">Vigenère cipher</option>
+      </select>
+    </div>
+    <div>
+      <label for="key" id="keyLabel">Shift (k)</label>
+      <input type="number" id="key" value="3" step="1">
+    </div>
+  </div>
+  <div class="hint" id="hint"></div>
+
+  <div class="alpha-wrap">
+    <div class="alpha-title">Alphabet index (A = 0 … Z = 25)</div>
+    <div class="alpha" id="alpha"></div>
+  </div>
+
+  <button class="go" id="go" type="button">Run</button>
+
+  <div class="out">
+    <div class="hd"><span>Output</span><button class="copy" id="copy" type="button">Copy</button></div>
+    <div id="res">—</div>
+    <div class="stats" id="stats"></div>
+  </div>
+
+  <div class="out steps">
+    <div class="hd"><span>Calculation steps (first 8 characters)</span></div>
+    <div id="steps">—</div>
+  </div>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
